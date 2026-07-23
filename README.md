@@ -1,75 +1,31 @@
-# Nuxt Minimal Starter
+# Nâam
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+![Aperçu](naam.webp)
 
-## Setup
+Rejeté par les siens, Nâam, un petit être de la forêt quitte son village et s'enfonce seul dans la forêt. Guidé par une étrange présence lumineuse, il traverse différents paysages et découvre peu à peu ses origines, jusqu'à trouver la place qui lui était destinée.
 
-Make sure to install dependencies:
+## Technologies
+
+- Three.js
+- WebGPU
+- TSL (Three.js Shading Language)
+- TypeScript
+- Vite
+
+## Installation
+
+Clonez le dépôt puis installez les dépendances :
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Lancez le serveur de développement :
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+pnpm run dev
 ```
 
-## Production
+## Équipe
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Projet réalisé en groupe dans le cadre du Master Expert en Création Numérique Interactive (ECNI) à Gobelins.
