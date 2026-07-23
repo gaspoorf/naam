@@ -1,0 +1,43 @@
+@use "sass:math";
+@use "sass:map";
+@use "sass:list";
+
+@function computeColumn($columnCount, $outerGutter: true) {
+  @return calc(
+    (
+        var(--vw) - (#{$columnCount - 1} * var(--grid-gutter)) -
+          (#{if(sass($outerGutter): 2; else: 0)} * var(--grid-margin))
+      ) /
+      #{$columnCount}
+  );
+}
+
+@function compute($columns, $additionalGutters: 0, $margin: 0) {
+  $gutters: max(0, math.ceil($columns) - 1) + $additionalGutters;
+  @return ($columns, $gutters, $margin);
+}
+
+@function computeCalc($computed) {
+  $columns: list.nth($computed, 1);
+  $gutters: list.nth($computed, 2);
+  $margin: list.nth($computed, 3);
+
+  @if $columns == 0 and $margin == 0 and $gutters > 0 {
+    @return calc(var(--grid-gutter) * #{$gutters});
+  }
+
+  @if $columns == 1 and $gutters == 0 and $margin == 0 {
+    @return var(--grid-column);
+  }
+
+  @if ($margin == 0) {
+    @return calc(
+      (var(--grid-column) * #{$columns}) + (var(--grid-gutter) * #{$gutters})
+    );
+  } @else {
+    @return calc(
+      (var(--grid-column) * #{$columns}) + (var(--grid-gutter) * #{$gutters}) +
+        (var(--grid-margin) * #{$margin})
+    );
+  }
+}

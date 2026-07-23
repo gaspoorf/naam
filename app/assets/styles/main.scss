@@ -1,0 +1,203 @@
+@use "core/variables.module" as variables;
+// @use "libs/style.module" as style;
+// @use "libs/mq.module" as mq;
+// @use "libs/global.module" as global;
+@forward "fonts/fonts";
+
+:root {
+  @include variables.root;
+  overscroll-behavior: none;
+}
+
+* {
+  cursor: none !important;
+}
+
+html,
+body {
+  cursor: none !important;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  scroll-behavior: initial;
+  color: var(--color-off-white);
+  background-color: var(--color-dark);
+  @include style.apply(base);
+  @include mx.hide-scrollbar;
+  overflow-x: hidden;
+}
+
+body {
+  overflow: unset !important;
+}
+
+sup {
+  line-height: 0;
+}
+
+html {
+  position: relative;
+  overflow: visible;
+  height: 100%;
+  min-height: 100%;
+  font-family: var(--main-font);
+  font-size: var(--rem);
+  overscroll-behavior-x: none;
+
+  &.no-desktop.no-scroll {
+    &,
+    body {
+      overflow: hidden;
+      height: var(--vh);
+      touch-action: none;
+    }
+  }
+
+  &.desktop.no-scroll {
+    body {
+      overflow: hidden;
+      height: var(--vh);
+    }
+  }
+}
+
+.scrolling-element {
+  overflow: hidden scroll;
+  overscroll-behavior-y: none;
+
+  &.safari.desktop {
+    overscroll-behavior-y: auto;
+  }
+}
+
+body {
+  position: relative;
+  display: flex;
+  max-width: 100%;
+  min-height: 100%;
+  flex-direction: column;
+  background: var(--color-dark);
+  color: var(--color-off-white);
+  @include style.apply(body-s);
+}
+
+* {
+  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
+  text-rendering: optimizelegibility;
+  text-rendering: geometricprecision;
+  text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  br {
+    margin: 0 !important;
+  }
+}
+
+button,
+a {
+  color: inherit;
+  cursor: pointer;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-decoration: none;
+}
+
+button {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+input,
+button,
+a {
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+[role="button"] {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+ul,
+nav {
+  padding: 0;
+  margin: 0;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+img {
+  display: block;
+  user-select: none;
+}
+
+button,
+input[type="submit"] {
+  display: block;
+  padding: 0;
+  border: none;
+  appearance: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+button,
+input,
+textarea {
+  border-radius: 0;
+  appearance: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  text-transform: inherit;
+}
+
+.hidden {
+  position: fixed;
+  left: -100vh;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+@include mq.tablet-portrait {
+  html {
+    --border-size: #{global.rem(1)} !important;
+    --vertical-padding: #{global.rem(8)} !important;
+
+    &.scroll-locked {
+      overflow: clip;
+    }
+  }
+}

@@ -1,0 +1,103 @@
+/* stylelint-disable color-no-hex */
+/* stylelint-disable custom-property-empty-line-before */
+@use "../libs/grid.module" as grid;
+@use "../libs/mq.module" as mq;
+@use "../libs/ease.module" as ease;
+@use "../libs/global.module" as global;
+
+$width-reference: 1440;
+$width-reference-m: 394;
+
+@mixin root {
+  --vw: 100vw;
+  --vh: 100vh;
+  --ivh: 100dvh;
+  --rem: 1px;
+
+  /* FONTS */
+  --main-font-name: "Lato";
+  --display-font-name: "Stefan";
+  --main-font: var(--main-font-name), "Inter", "Arial", sans-serif;
+  --display-font: var(--display-font-name), "Times New Roman", serif;
+  --fallback-font: "Arial", sans-serif;
+
+  /* COLORS */
+
+  --color-dark: #070d1c;
+  --color-dark-l1: #111622;
+  --color-dark-l2: #1c222c;
+  --color-off-white: #d6dadc;
+
+  --color-black: #0a0a0a;
+  --color-white: #fafafa;
+  --color-white20: #fafafa20;
+  --color-bg-dark: #0a0a0a;
+  --color-bg-dark20: #0a0a0a20;
+  --color-bg-dark40: #0a0a0a40;
+  --color-bg-dark60: #0a0a0a60;
+  --color-bg-dark-transparent: #0a0a0a00;
+  --color-bg-grey: #171717;
+  --color-pop-green: #21ffc0;
+  --color-grey: #e6e6e6;
+
+  /* GRID */
+  --grid-margin: #{global.rem(32)};
+  --grid-gutter: #{global.rem(20)};
+  --grid-column: #{grid.computeColumn(12, true)};
+
+  /* GAPS */
+  --gap-xxs: #{global.rem(4)};
+  --gap-xs: #{global.rem(8)};
+  --gap-s: #{global.rem(16)};
+  --gap-sm: #{global.rem(24)};
+  --gap-m: #{global.rem(32)};
+  --gap-l: #{global.rem(64)};
+  --gap-xl: #{global.rem(90)};
+  --gap-xxl: #{global.rem(120)};
+  --gap-xxxl: #{global.rem(180)};
+
+  /* RADIUS */
+  --radius-xs: #{global.rem(4)};
+  --radius-s: #{global.rem(8)};
+  --radius-m: #{global.rem(12)};
+  --radius-l: #{global.rem(16)};
+  --radius-xl: #{global.rem(20)};
+  --radius-full: 9999px;
+
+  /* SIZES */
+  --padding: #{global.rem(10)};
+
+  /* ICONS */
+  --icon-size-s: #{global.rem(16)};
+  --icon-size-m: #{global.rem(24)};
+  --icon-size-l: #{global.rem(32)};
+  --icon-size-xl: #{global.rem(64)};
+
+  /* ANIMATION */
+  --ease-spring: #{ease.$spring};
+  --ease-quad-in-out: #{ease.$quad-in-out};
+  --ease-expo-out: #{ease.$expo-out};
+
+  @include mq.tablet-portrait {
+    /* SIZES */
+    --padding: #{global.rem(10)};
+
+    --width-reference: #{$width-reference-m};
+    --button-height: #{global.rem(38)};
+
+    /* GRID */
+    --grid-margin: #{global.rem(20)};
+    --grid-gutter: #{global.rem(20)};
+    --grid-column: #{grid.computeColumn(6, true)};
+  }
+
+  @include mq.phone-portrait {
+    /* SIZES */
+    --padding: #{global.rem(8)};
+
+    /* GRID */
+    --grid-margin: #{global.rem(15)};
+    --grid-gutter: #{global.rem(10)};
+    --grid-column: #{grid.computeColumn(6, true)};
+  }
+}

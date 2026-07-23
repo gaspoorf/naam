@@ -1,0 +1,11 @@
+@use "../layout/_stylings.module";
+
+@mixin get($style) {
+  composes: $style from "../layout/_composition.module.scss";
+}
+
+@mixin apply($style) {
+  /* stylelint-disable */
+    @extend #{'%' + $style} !optional;
+  /* stylelint-enable */
+}

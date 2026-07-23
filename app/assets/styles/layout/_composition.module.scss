@@ -1,0 +1,18 @@
+@use "./stylings.module" as *;
+/* stylelint-disable */
+
+@each $name in $styles {
+  .#{$name}  {
+    @extend %#{$name};
+  }
+
+  .#{$name}-desktop  {
+    @extend %#{$name}-desktop;
+  }
+}
+
+@each $name in $styles {
+ :root .#{$name}-mobile  {
+    @extend %#{$name}-mobile;
+  }
+}

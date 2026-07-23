@@ -1,0 +1,31 @@
+// BASIC FADE
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.35s ease;
+}
+
+// SOUND BUTTON FADE
+.sound-fade-enter-active,
+.sound-fade-leave-active {
+  transition: opacity 0.1s ease;
+}
+
+.sound-fade-enter-from,
+.sound-fade-leave-to {
+  opacity: 0;
+}
+
+// LOADER FADE (delay before fade out to allow users to see 100% progress)
+.loader-fade-leave-active {
+  transition: opacity 0.5s ease-out;
+  transition-delay: 0.3s;
+}
+.loader-fade-leave-to {
+  opacity: 0;
+}

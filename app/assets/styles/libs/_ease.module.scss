@@ -1,0 +1,50 @@
+$quad-in: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$cubic-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$quart-in: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$quint-in: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$sine-in: cubic-bezier(0.47, 0, 0.745, 0.715);
+$expo-in: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+$circ-in: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+
+$quad-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$cubic-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+$quart-out: cubic-bezier(0.165, 0.84, 0.44, 1);
+$quint-out: cubic-bezier(0.23, 1, 0.32, 1);
+$sine-out: cubic-bezier(0.39, 0.575, 0.565, 1);
+$expo-out: cubic-bezier(0.19, 1, 0.22, 1);
+$circ-out: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+$quad-in-out: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$cubic-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+$quart-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+$quint-in-out: cubic-bezier(0.86, 0, 0.07, 1);
+$sine-in-out: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$expo-in-out: cubic-bezier(1, 0, 0, 1);
+$circ-in-out: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+$spring: linear(
+  0,
+  0.0014,
+  0.0055 1.03%,
+  0.0239,
+  0.053 3.44%,
+  0.0961 4.81%,
+  0.1957 7.39%,
+  0.4354 12.88%,
+  0.5484,
+  0.6494,
+  0.7362,
+  0.8083 23.88%,
+  0.8696,
+  0.9168 29.72%,
+  0.9368,
+  0.9536 32.81%,
+  0.9793 35.9%,
+  0.997 39.17%,
+  1.0084 42.77%,
+  1.0142 47.07%,
+  1.0144 53.43%,
+  1.0054 68.37%,
+  1.0019 77.3%,
+  0.9998 99.98%
+);
